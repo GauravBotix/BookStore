@@ -6,11 +6,11 @@ import axios from "axios";
 
 const Freepics = () => {
   const [book, setBook] = useState([]);
-
+  const dbUrl = import.meta.env.VITE_DATABASE_URL;
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/book");
+        const res = await axios.get(`${dbUrl}/book`);
         const filteredData = res.data.filter(
           (item) => item.category === "Free"
         );

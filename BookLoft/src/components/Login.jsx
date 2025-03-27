@@ -6,11 +6,14 @@ import toast from "react-hot-toast";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const apiUrl = import.meta.env.VITE_BACKEND_URL;
+  
+  
   const handleSubmit = async (e) => {
+    
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/user/login", {
+      const response = await axios.post(`${apiUrl}/login`, {
         email,
         password,
       });
