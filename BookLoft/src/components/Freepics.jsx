@@ -7,6 +7,7 @@ import axios from "axios";
 const Freepics = () => {
   const [book, setBook] = useState([]);
   const dbUrl = import.meta.env.VITE_DATABASE_URL;
+  
   useEffect(() => {
     const getBook = async () => {
       try {
